@@ -6,13 +6,31 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		43AA3A652D8923AC009C4E0B /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 43AA3A642D8923AC009C4E0B /* Config.xcconfig */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		43AA3A532D891CE8009C4E0B /* CitySights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitySights.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43AA3A642D8923AC009C4E0B /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		43AA3A672D892485009C4E0B /* Exceptions for "CitySights" folder in "CitySights" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 43AA3A522D891CE8009C4E0B /* CitySights */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		43AA3A552D891CE8009C4E0B /* CitySights */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				43AA3A672D892485009C4E0B /* Exceptions for "CitySights" folder in "CitySights" target */,
+			);
 			path = CitySights;
 			sourceTree = "<group>";
 		};
@@ -32,6 +50,7 @@
 		43AA3A4A2D891CE8009C4E0B = {
 			isa = PBXGroup;
 			children = (
+				43AA3A642D8923AC009C4E0B /* Config.xcconfig */,
 				43AA3A552D891CE8009C4E0B /* CitySights */,
 				43AA3A542D891CE8009C4E0B /* Products */,
 			);
@@ -109,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43AA3A652D8923AC009C4E0B /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +147,7 @@
 /* Begin XCBuildConfiguration section */
 		43AA3A5F2D891CEA009C4E0B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43AA3A642D8923AC009C4E0B /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -190,6 +211,7 @@
 		};
 		43AA3A602D891CEA009C4E0B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43AA3A642D8923AC009C4E0B /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -246,6 +268,7 @@
 		};
 		43AA3A622D891CEA009C4E0B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43AA3A642D8923AC009C4E0B /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -254,6 +277,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CitySights/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CitySights/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -274,6 +298,7 @@
 		};
 		43AA3A632D891CEA009C4E0B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43AA3A642D8923AC009C4E0B /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -282,6 +307,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CitySights/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CitySights/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
