@@ -11,7 +11,7 @@ struct ApiResponse: Codable {
     let businesses: [Business]
 }
 
-struct Business: Codable {
+struct Business: Codable, Identifiable {
     let id: String
     let alias: String
     let name: String
@@ -43,7 +43,7 @@ struct Business: Codable {
         }
         let roundedRating = ceil(self.rating * 2) / 2
         if String(roundedRating).hasSuffix(".0") {
-            var stars = String(roundedRating).prefix(1)
+            let stars = String(roundedRating).prefix(1)
             return String(stars)
         }
         return roundedRating.description
