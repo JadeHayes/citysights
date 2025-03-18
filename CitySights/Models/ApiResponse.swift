@@ -20,7 +20,7 @@ struct Business: Codable {
     let url: String
     let reviewCount: Int
     let categories: [Category]
-    let rating: Double
+    var rating: Double
     let coordinates: Coordinates
     let transactions: [String]
     let price: String?
@@ -35,6 +35,22 @@ struct Business: Codable {
         case isClosed = "is_closed"
         case reviewCount = "review_count"
         case displayPhone = "display_phone"
+    }
+    
+    func getStars() -> String {
+        if self.rating.isNaN {
+            return "0"
+        }
+        let roundedRating = ceil(self.rating * 2) / 2
+        if String(roundedRating).hasSuffix(".0") {
+            var stars = String(roundedRating).prefix(1)
+            return String(stars)
+        }
+        return roundedRating.description
+    }
+    
+    func distanceInMiles() -> String {
+        return String(format: "%.0f", ceil(self.distance * 0.000621371))
     }
 }
 
