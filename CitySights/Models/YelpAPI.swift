@@ -18,19 +18,20 @@ struct YelpAPI {
         self.version = "v3"
     }
     
-    func getBusinesses(latitude: String, longitude: String) async throws -> [Business]? {
+    func getBusinesses(latitude: String, longitude: String) async throws -> [Business] {
         guard self.apiKey != "" else {
             print("Error: API Key not found")
-            return nil
+            return [Business]()
         }
         
         let url = URL(string: "\(self.base)/businesses/search")!
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         let queryItems: [URLQueryItem] = [
           URLQueryItem(name: "sort_by", value: "best_match"),
-          URLQueryItem(name: "limit", value: "20"),
+          URLQueryItem(name: "limit", value: "10"),
           URLQueryItem(name: "latitude", value: latitude),
-          URLQueryItem(name: "longitude", value: longitude)
+          URLQueryItem(name: "longitude", value: longitude),
+          URLQueryItem(name: "category", value: "food")
         ]
         components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
 
@@ -46,7 +47,7 @@ struct YelpAPI {
             return yelpResponse.businesses
         } catch {
             print("error decoding JSON: \(error)")
-            return nil
+            return [Business]()
         }
     }
 }
