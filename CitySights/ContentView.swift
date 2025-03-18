@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    let yelpAPI = YelpAPI()
+    @State var businesses: [Business] = []
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ForEach(businesses, id: \.id) { business in
+            Text(business.name)
         }
         .padding()
+        .onAppear() {
+            Task {
+                do {
+                    let response = try await yelpAPI.getBusinesses(location: "redondo beach")
+                    businesses = response ?? []
+    
+                } catch {
+                    print("error: \(error)")
+                }
+            }
+        }
     }
 }
 
