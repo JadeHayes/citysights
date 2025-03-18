@@ -15,17 +15,15 @@ struct ContentView: View {
             Text(business.name)
         }
         .padding()
-        .onAppear() {
-            Task {
+        .task {
                 do {
-                    let response = try await yelpAPI.getBusinesses(location: "redondo beach")
+                    let response = try await yelpAPI.getBusinesses(latitude: "33.8492", longitude: "-118.3884")
                     businesses = response ?? []
     
                 } catch {
                     print("error: \(error)")
                 }
             }
-        }
     }
 }
 
