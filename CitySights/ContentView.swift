@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         List {
             ForEach(businesses, id: \.id) { business in
-                var distance = business.distanceInMiles()
+                let distance = business.distanceInMiles()
                 VStack (spacing: 20) {
                     HStack (spacing: 0){
                         Image("list-placeholder-image")
@@ -57,3 +57,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
