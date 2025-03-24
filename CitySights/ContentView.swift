@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    let yelpAPI = YelpAPI()
-    @State var businesses: [Business] = []
-    @State var selectedBusiness: Business?
+//    let yelpAPI = YelpAPI()
+//    @State var businesses: [Business] = []
+//    @State var selectedBusiness: Business?
     var body: some View {
         List {
             ForEach(businesses, id: \.id) { business in
@@ -39,15 +39,6 @@ struct ContentView: View {
             .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
-        .task {
-                do {
-                    let response = try await yelpAPI.getBusinesses(latitude: "33.8492", longitude: "-118.3884")
-                    businesses = response
-    
-                } catch {
-                    print("error: \(error)")
-                }
-            }
         .sheet(item: $selectedBusiness) { b in
             DetailView(b: b)
         }
