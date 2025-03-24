@@ -17,7 +17,7 @@ struct DataService {
         guard apiKey != nil else {
             return [Business]()
         }
-        
+        print("Api key found, calling Yelp API...")
         // 1. Create url
         if let url = URL(string: "https://api.yelp.com/v3/businesses/search?latitude=\(latitude)&longitude=\(longitude)&categories=restaurants&limit=10") {
             

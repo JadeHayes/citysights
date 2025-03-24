@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct DetailView: View {
-    var b: Business?
+    @Environment(BusinessModel.self) var model
+
     var body: some View {
+        let b = model.selectedBusiness
         VStack (spacing: 0){
             ZStack (alignment: .trailing){
                 Image("detail-placeholder-image")
@@ -79,34 +81,5 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView(b: Business(
-        id: "123",
-        alias: "hello",
-        name: "Business Name",
-        imageUrl: "https://via.placeholder.com/300",
-        isClosed: false,
-        url: "https://www.example.com/businesshttps://www.example.com/businesshttps://www.example.com/businesshttps://www.example.com/businesshttps://www.example.com/businesshttps://www.example.com/businesshttps://www.example.com/businesshttps://www.example.com/businesshttps://www.example.com/businesshttps://www.example.com/business",
-        reviewCount: 120,
-        categories: [
-            Category(alias: "coffee", title: "Coffee & Tea"),
-            Category(alias: "bakery", title: "Bakeries")
-        ],
-        rating: 4.5,
-        coordinates: Coordinates(latitude: 34.0522, longitude: -118.2437),
-        transactions: ["pickup", "delivery"],
-        price: "$$",
-        location: Location(
-            address1: "123 Main Street",
-            address2: "Suite 100",
-            address3: nil,
-            city: "Los Angeles",
-            zipCode: "90012",
-            country: "US",
-            state: "CA",
-            displayAddress: ["123 Main Street", "Los Angeles, CA 90012"]
-        ),
-        phone: "+1234567890",
-        displayPhone: "(123) 456-7890",
-        distance: 1500.0 // 1.5km
-    ))
+    DetailView()
 }
