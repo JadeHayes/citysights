@@ -12,7 +12,7 @@ struct ApiResponse: Codable {
 }
 
 struct Business: Codable, Identifiable {
-    let id: String
+    let id: String?
     let alias: String
     let name: String
     let imageUrl: String
@@ -21,7 +21,7 @@ struct Business: Codable, Identifiable {
     let reviewCount: Int
     let categories: [Category]
     var rating: Double
-    let coordinates: Coordinates
+    let coordinates: Coordinates?
     let transactions: [String]
     let price: String?
     let location: Location
@@ -60,8 +60,8 @@ struct Category: Codable {
 }
 
 struct Coordinates: Codable {
-    let latitude: Double
-    let longitude: Double
+    let latitude: Double?
+    let longitude: Double?
 }
 
 struct Location: Codable {
